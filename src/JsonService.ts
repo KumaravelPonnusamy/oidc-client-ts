@@ -83,6 +83,7 @@ export class JsonService {
         if (token) {
             logger.debug("token passed, setting Authorization header");
             headers["Authorization"] = "Bearer " + token;
+            headers["Access-Control-Allow-Origin"] = "*";
         }
 
         let response: Response;
@@ -135,6 +136,7 @@ export class JsonService {
         };
         if (basicAuth !== undefined) {
             headers["Authorization"] = "Basic " + basicAuth;
+            headers["Access-Control-Allow-Origin"] = "*";
         }
 
         let response: Response;
